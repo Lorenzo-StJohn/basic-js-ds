@@ -15,8 +15,8 @@ const { NotImplementedError } = require("../extensions/index.js");
  */
 class Queue {
   getUnderlyingList() {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+    if (this.value === undefined) return null;
+    return this;
   }
 
   enqueue(value) {
