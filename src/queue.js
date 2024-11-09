@@ -34,8 +34,17 @@ class Queue {
   }
 
   dequeue() {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+    if (this.value === undefined) return undefined;
+    if (this.next === null) {
+      const ans = this.value;
+      this.value = undefined;
+      this.next = undefined;
+      return ans;
+    }
+    const ans = this.value;
+    this.value = this.next.value;
+    this.next = this.next.next;
+    return ans;
   }
 }
 
